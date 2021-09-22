@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.naman14.timber">
+    package="com.rackluxury.timber">
 
     <uses-sdk tools:overrideLibrary="de.Maxr1998.trackselectorlib" />
 
@@ -15,7 +15,7 @@
 
 
     <application
-        android:name=".TimberApp"
+        android:name="com.rackluxury.timber.TimberApp"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="Timber"
@@ -23,8 +23,9 @@
         tools:replace="android:allowBackup, android:label">
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.rackluxury.timber.activities.MainActivity"
             android:label="Timber"
+            android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,32 +70,32 @@
         </activity>
 
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name="com.rackluxury.timber.activities.SettingsActivity"
             android:theme="@style/AppThemeNormalLight" />
 
         <activity
-            android:name=".activities.PlaylistDetailActivity"
+            android:name="com.rackluxury.timber.activities.PlaylistDetailActivity"
             android:theme="@style/AppTheme.FullScreen.Light" />
 
         <activity
-            android:name=".activities.SearchActivity"
+            android:name="com.rackluxury.timber.activities.SearchActivity"
             android:theme="@style/AppThemeNormalLight" />
 
         <activity
-            android:name=".activities.NowPlayingActivity"
+            android:name="com.rackluxury.timber.activities.NowPlayingActivity"
             android:theme="@style/AppTheme.FullScreen.Light" />
 
-        <activity android:name=".activities.DonateActivity"/>
+        <activity android:name="com.rackluxury.timber.activities.DonateActivity"/>
 
         <activity
-            android:name=".cast.ExpandedControlsActivity"
+            android:name="com.rackluxury.timber.cast.ExpandedControlsActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.ExpandedCastController"
             android:screenOrientation="portrait">
 
         </activity>
 
-        <receiver android:name=".helpers.MediaButtonIntentReceiver">
+        <receiver android:name="com.rackluxury.timber.helpers.MediaButtonIntentReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
                 <action android:name="android.media.AUDIO_BECOMING_NOISY" />
@@ -102,12 +103,12 @@
         </receiver>
         <!-- Music service -->
         <service
-            android:name=".MusicService"
+            android:name="com.rackluxury.timber.MusicService"
             android:label="@string/app_name"
             android:process=":main" />
 
         <service
-            android:name=".WearBrowserService"
+            android:name="com.rackluxury.timber.WearBrowserService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />
@@ -118,33 +119,33 @@
         <meta-data
             android:name=
                 "com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
-            android:value="com.naman14.timber.cast.CastOptionsProvider" />
+            android:value="com.rackluxury.timber.cast.CastOptionsProvider" />
 
-        <receiver android:name=".widgets.desktop.StandardWidget" android:label="@string/widget_standard">
+        <receiver android:name="com.rackluxury.timber.widgets.desktop.StandardWidget" android:label="@string/widget_standard">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.naman14.timber.metachanged" />
-                <action android:name="com.naman14.timber.playstatechanged" />
+                <action android:name="com.rackluxury.timber.metachanged" />
+                <action android:name="com.rackluxury.timber.playstatechanged" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/widget_standard" />
         </receiver>
 
-        <receiver android:name=".widgets.desktop.WhiteWidget" android:label="@string/widget_white">
+        <receiver android:name="com.rackluxury.timber.widgets.desktop.WhiteWidget" android:label="@string/widget_white">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.naman14.timber.metachanged" />
-                <action android:name="com.naman14.timber.playstatechanged" />
+                <action android:name="com.rackluxury.timber.metachanged" />
+                <action android:name="com.rackluxury.timber.playstatechanged" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/widget_white" />
         </receiver>
 
-        <receiver android:name=".widgets.desktop.SmallWidget" android:label="@string/widget_small">
+        <receiver android:name="com.rackluxury.timber.widgets.desktop.SmallWidget" android:label="@string/widget_small">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.naman14.timber.metachanged" />
-                <action android:name="com.naman14.timber.playstatechanged" />
+                <action android:name="com.rackluxury.timber.metachanged" />
+                <action android:name="com.rackluxury.timber.playstatechanged" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/widget_small" />

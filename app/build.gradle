@@ -6,11 +6,11 @@ android {
     compileSdkVersion rootProject.compileSdkVersion
 
     defaultConfig {
-        applicationId "naman14.timber"
+        applicationId "rackluxury.timber"
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
-        versionCode 22
-        versionName "1.8"
+        versionCode 1
+        versionName "1.0.0"
         //renderscript support mode is not supported for 21+ with gradle version 2.0
         renderscriptTargetApi 16
         renderscriptSupportModeEnabled false
@@ -43,6 +43,11 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    def nav_version = "2.4.0-alpha02"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
     implementation "androidx.appcompat:appcompat:1.0.2"
     implementation "com.google.android.material:material:1.0.0"
     implementation "androidx.cardview:cardview:1.0.0"

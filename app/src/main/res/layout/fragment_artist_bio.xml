@@ -23,7 +23,7 @@
             android:textSize="40sp"/>
 
         </androidx.cardview.widget.CardView>
-    <com.naman14.timber.widgets.MultiViewPager
+    <com.rackluxury.timber.widgets.MultiViewPager
         android:id="@+id/tagspager"
         android:layout_width="match_parent"
         android:layout_height="150dp"
